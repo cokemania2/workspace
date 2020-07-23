@@ -30,3 +30,6 @@ def solution(answers):
         answer.append(3)
     return answer
 print(solution([1,3,2,4,2]))
+c
++
+
