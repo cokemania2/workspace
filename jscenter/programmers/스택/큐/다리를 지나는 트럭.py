@@ -14,4 +14,5 @@ def solution(bridge_length,weight,truck_weights):
             bridge.append(0)
         answer = answer + 1
     return answer
+
 print(solution(100,100,[10,10,10,10,10,10,10,10,10,10]))
