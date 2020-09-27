@@ -8,6 +8,7 @@
 // Producer vs Consumer 
 
 // 1. Producer 
+
 // when new Promise is created, the executor runs automatically !!
 const promise = new Promise((resolve,reject)=>{
     // doing some heavy work (network , read files) 
@@ -30,42 +31,43 @@ promise
         console.log('finally');
     })
 
-const fetchNumber = new Promise((resolve,reject) =>{
-    setTimeout(()=>resolve(1),1000);
+// 3. Promise chaining 
+
+const fetchNumer = new Promise((resolve,reject) =>{
+	setTimeout(()=> resolve(1), 1000);
+});
+
+fetchNumer
+.then(num => num *2)
+.then(num => num *3)
+.then(num =>{
+	return new Promise((resolve,reject) =>{
+		setTimeout(()=> resolve(num-1),1000);
+	});
 })
-
-fetchNumber
-    .then(num => num*2)
-    .then(num => num*3) 
-    .then(num=> {
-        return new Promise((resolve,reject)=>{
-            setTimeout(()=>resolve(num-1),1000);
-        });
-    })
-    .then(num=>console.log(num));
+.then(num => console.log(num));
 
 
-    // 4. Error Handling 
-    const getHen = () => 
-        new Promise((resolve,reject) =>{
-            setTimeout(()=> resolve('닭'),1000);
-        });
-    const wldn = hen => 
-        new Promise((resolve,reject)=>{
-            setTimeout(()=> reject(new Error(`${hen} => 알`)),1000);
-        });
-    const cook = egg =>
-        new Promise((resolve,reject)=>{
-            setTimeout(()=> resolve(`${egg} => 후라이팬`),1000);
-        });
+// 4. Error Handling
+const getone = () => 
+	new Promise((resolve,reject)=>{
+		setTimeout(()=> resolve('1'),1000);
+	});
 
-    getHen()
-    .then(wldn) //then에서 가져오는 value를 wldn로 바로 전달 
-    .catch(error => {
-        return '빵';
-    })
-    .then(cook)
-    .then(meal=>console.log(meal));
-    // == .then(meal=>console.log())
+const getTwo = one =>
+	new Promise((resolve,reject)=>{
+		setTimeout(()=> resolve(`${one} => 2`,1000));
+	});
 
+const getThree = two =>
+	new Promise((resolve,reject)=>{
+		setTimeout(()=> resolve(`${two} => 3`,1000));
+	});
 
+getone()
+	.then(one => getTwo(one)) // .then(getTwo) 로도 간략화 가능 
+	.then(two => getThree(two))
+	.catch(error => {
+		return '-1'; // 에러가 나면 -1로 대체
+	})
+	.then(final => console.log(final));

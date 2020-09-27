@@ -1,2 +1,0 @@
-# test
-my exercise repository

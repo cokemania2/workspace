@@ -26,12 +26,20 @@ printWithDealay(()=>console.log('hello2'),1000);
 
 //callback hell example
 class UserStorage {
-    loginUser(id,password,onSuccess,onError) {
-        setTimeout(()=>{
-            
+    loginUser(id,onSuccess,onError) {
+        setTimeout(()=>{ // 로그인하는데에 2초 
+			if ( id === 'admin') 
+				onSuccess(id);
+			else 
+				onError(new Error('not found'));
         },2000);
     }
     getRoles (user, onSuccess, onError) {
-
+		if ( user === 'admin') {
+			onSuccess({name : 'admin', role : 'admin'});
+		}
+		else {
+			onError(new Error('no access'));
+		}
     }
 }
