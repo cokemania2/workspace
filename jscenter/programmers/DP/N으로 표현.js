@@ -24,6 +24,8 @@ function solution(N, number) {
                 }
         }
         a[i+1] = Array.from(new Set(a[i+1]))
+        console.log(a[i+1]);
+        
     }
     return -1
 

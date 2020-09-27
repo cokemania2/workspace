@@ -14,7 +14,10 @@ function solution(baseball) {
                 let strike = 0;
                 let ball = 0;
                 let b = String(baseball[j][0]).split('');
+                console.log(b);
                 
+
+
                 for (let k=0;k<3;k++) {
                     if (a[k] == b[k]) strike++;
                     else if (b.indexOf(a[k]) != -1) ball++;
