@@ -10,6 +10,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	font-family: 'Noto Sans KR', sans-serif;
+	padding-top: 3rem;
 }
 
 .notes {
