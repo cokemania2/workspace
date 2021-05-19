@@ -22,3 +22,20 @@ def solution(progresses, speeds):
     answer.append(stack)
     return answer
 print(solution([5,4,3,2,1],[1,1,1,1,1]))
+
+
+import math
+
+def solution2(progresses, speeds):
+    answer = []
+    deploy = 0
+    day = math.ceil((100 - progresses[0]) / speeds[0])
+    for i in range(len(progresses)) :
+        if progresses[i] + day * speeds[i] >= 100 :
+            deploy += 1
+        else :
+            day += math.ceil((100 - (progresses[i] + day * speeds[i])) / speeds[i])
+            answer.append(deploy)
+            deploy = 1
+    answer.append(deploy)
+    return answer
