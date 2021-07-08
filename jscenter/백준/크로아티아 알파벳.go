@@ -5,10 +5,18 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
-	var a, b int
-	fmt.Scanf("%d %d", &a, &b)
-	fmt.Println(a*(b-1) + 1)
+	var s string
+	dummy := []string{"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="}
+
+	fmt.Scanf("%s", &s)
+	for _, v := range dummy {
+		if indexS := strings.Index(s, v); indexS != -1 {
+			s = strings.ReplaceAll(s, v, "0")
+		}
+	}
+	fmt.Println(len(s))
 }
