@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin : 0;
+	background-color: #ABABFB ;
+	display: flex;
+	flex-wrap: wrap;
+	font-family: 'Noto Sans KR', sans-serif;
+	padding-top: 3rem;
+}
+
+.notes {
+	margin: 20px;
+	width: 500px;
+	height: 500px;
+	background-color: #F3F3FB;
+	box-shadow: 0 0 10px 4px rgba(0,0,0,0.1);
+}
+
+.notes .tools {
+	background-color: #D4D4E6;
+	padding: 0.5rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.notes .tools button {
+	cursor: pointer;
+	background-color: transparent;
+	border : none;
+	font-size: 1rem;
+	margin-left: 0.5rem;
+}
+
+.notes .main {
+	height: 400px;
+	overflow: hidden;
+	width: 100%;
+}
+
+.notes textarea {
+	outline: none;
+	font-family: inherit;
+	border :none;
+	font-size : 1.2rem;
+	height: 400px;
+	width: 100%;
+}
+
+.add {
+	cursor: pointer;
+	background-color: #F3F3FB;
+	border-radius: 3px;
+	border: none;
+	color: #242339;
+	padding: 0.5rem 1rem;
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+}
+
+.notes .hidden {
+	display: none;
+}

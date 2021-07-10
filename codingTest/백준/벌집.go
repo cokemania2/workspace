@@ -1,5 +1,5 @@
-// 고무오리 디버깅.go
-// https://www.acmicpc.net/problem/20001
+// 벌집.go
+// https://www.acmicpc.net/problem/2292
 
 package main
 
