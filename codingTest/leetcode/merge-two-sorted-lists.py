@@ -16,13 +16,13 @@ class Solution:
             else:
                 return (l2, l1, l2.next)
         
-        def goNext(node, l1, l2):
+        def go_next(node, l1, l2):
             next_node, l1, l2 = get_next(l1, l2)
             if l1 is None and l2 is None:
                 if node is not None:
                     node.next = next_node
                 return node
-            node.next = goNext(next_node, l1, l2)
+            node.next = go_next(next_node, l1, l2)
             return node
         next_node, l1, l2 = get_next(list1, list2)
-        return goNext(next_node,l1, l2)
+        return go_next(next_node,l1, l2)
