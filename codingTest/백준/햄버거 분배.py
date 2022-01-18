@@ -3,7 +3,6 @@
 
 N, K = map(int, input().split())
 HP = list(input())
-print(HP)
 for i, v in enumerate(HP):
     if v == 'P':
         for j in range(K,0,-1):
@@ -15,6 +14,5 @@ for i, v in enumerate(HP):
                 HP[i+K-j] = '🦴'
                 HP[i] = '😋'
                 break
-print(HP)
 print(HP.count('😋'))
 
