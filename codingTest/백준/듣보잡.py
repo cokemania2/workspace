@@ -9,7 +9,7 @@ answer = []
 
 N, M = map(int, sys.stdin.readline().split())
 for i in range(N):
-    nput = sys.stdin.readline().split('\n', 1)[0]
+    ㅕnput = sys.stdin.readline().split('\n', 1)[0]
     N_list.append(nput)
     N_dic[nput] = True
 for i in range(M):
