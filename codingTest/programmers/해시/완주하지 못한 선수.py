@@ -13,3 +13,20 @@ def solution(participant,completion):
             del a[completion[i]]
     return (list(a.keys())[0])
 print(solution(['leo', 'kiki', 'eden'],['eden', 'kiki']))
+
+
+def solution(participant, completion):
+    answer = ''
+    dic = {}
+    for p in participant:
+        if p in dic:
+            dic[p] += 1
+        else:
+            dic[p] = 1
+    for c in completion:
+        if c in dic:
+            dic[c] -= 1
+            if dic[c] == 0:
+                del dic[c]
+    for key in dic:
+        return key
