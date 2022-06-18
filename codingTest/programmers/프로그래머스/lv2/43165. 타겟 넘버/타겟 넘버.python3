@@ -1,0 +1,11 @@
+def solution(numbers, target):
+    return DFS(numbers, 0, target, 0)
+
+def DFS(numbers, step, target, value) :
+    if step == len(numbers)  :
+        if value == target :
+            return 1
+        else :
+            return 0
+    return (DFS(numbers, step + 1, target, value + (numbers[step])) +
+            DFS(numbers, step + 1, target, value - (numbers[step])))
